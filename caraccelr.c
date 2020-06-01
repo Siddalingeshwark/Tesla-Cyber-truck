@@ -1,9 +1,3 @@
-/*
- * phase.c
- *
- *  Created on: Apr 10, 2014
- *      Author: kamath
- */
 #include<stdio.h>
 #include<math.h>
 #include<GL/glut.h>
@@ -19,6 +13,8 @@ float build[]={0,10,110,230,350,450,600,700,800,1000};
 int citymov=0;
 
 static GLfloat theta=0.0;
+void display();
+
 void myinit()
 {
 	glMatrixMode(GL_PROJECTION);
@@ -224,7 +220,7 @@ void nightsky()
 }
 void earlynight()
 {
-		moon();
+	moon();
 	star2(70,450);
 	star2(300,250);
 	star3(225,400);
@@ -264,7 +260,7 @@ void baseline()
 	glVertex2i(1000,75);
 	glVertex2i(1000,60);
 	glEnd();
-	//draw thw road markers
+	//draw the road markers
 
 	glColor3f(1,1,1);
 	for(l=0;l<12;l++){
@@ -290,8 +286,10 @@ float angle;
 double radius=45;
 x1=h;
 y1=375;
+
 glBegin(GL_TRIANGLE_FAN);
 glVertex2f(x1,y1);
+
 for(angle=1.0f;angle<361.0f;angle+=0.2)
 {
     x2=x1+sin(angle)*radius;
@@ -326,74 +324,74 @@ void nite_mrng()
 	if(day<125)
 	{
 		glBegin(GL_POLYGON);
-	glColor3f(0,0,0);
-	glVertex2i(0,75);
-	glVertex2i(0,500);
-	glVertex2i(1000,500);
-	glVertex2i(1000,75);
-	glEnd();
-	nightsky();
+			glColor3f(0,0,0);
+			glVertex2i(0,75);
+			glVertex2i(0,500);
+			glVertex2i(1000,500);
+			glVertex2i(1000,75);
+		glEnd();
+		nightsky();
 	}
 	else if(day<150)
 	{
 		glBegin(GL_POLYGON);
-	glColor3f(0,0,0);
-	glVertex2i(0,75);
-	glVertex2i(0,500);
-	glColor3f(0.32,0.32,0.32);
-	glVertex2i(1000,500);
-	glColor3f(0,0,0);
-	glVertex2i(1000,75);
-	glEnd();
-	nightsky();
+			glColor3f(0,0,0);
+			glVertex2i(0,75);
+			glVertex2i(0,500);
+			glColor3f(0.32,0.32,0.32);
+			glVertex2i(1000,500);
+			glColor3f(0,0,0);
+			glVertex2i(1000,75);
+		glEnd();
+		nightsky();
 	}
 	else if(day<175)
 	{
 		glBegin(GL_POLYGON);
-	glColor3f(0,0,0);
-	glVertex2i(0,75);
-	glVertex2i(0,500);
-	glColor3f(0.32,0.32,0.32);
-	glVertex2i(1000,500);
-	glVertex2i(1000,75);
-	glEnd();
-	nightsky();
+			glColor3f(0,0,0);
+			glVertex2i(0,75);
+			glVertex2i(0,500);
+			glColor3f(0.32,0.32,0.32);
+			glVertex2i(1000,500);
+			glVertex2i(1000,75);
+		glEnd();
+		nightsky();
 	}
 	else if(day<200)
 	{
 		glBegin(GL_POLYGON);
-	glColor3f(0.32,0.32,0.32);
-	glVertex2i(0,75);
-	glVertex2i(0,500);
-	glColor3f(0.13,0.13,0.55);
-	glVertex2i(1000,500);
-	glColor3f(0.32,0.32,0.32);
-	glVertex2i(1000,75);
-	glEnd();
-	earlynight();
+			glColor3f(0.32,0.32,0.32);
+			glVertex2i(0,75);
+			glVertex2i(0,500);
+			glColor3f(0.13,0.13,0.55);
+			glVertex2i(1000,500);
+			glColor3f(0.32,0.32,0.32);
+			glVertex2i(1000,75);
+		glEnd();
+		earlynight();
 	}
 	else if(day<225)
 	{
-	glBegin(GL_POLYGON);
-	glColor3f(0.13,0.13,0.55);
-	glVertex2i(0,75);
-	glColor3f(0.32,0.32,0.32);
-	glVertex2i(0,500);
-	glColor3f(0.13,0.13,0.55);
-	glVertex2i(1000,500);
-	glVertex2i(1000,75);
-	glEnd();
-	earlynight();
+		glBegin(GL_POLYGON);
+			glColor3f(0.13,0.13,0.55);
+			glVertex2i(0,75);
+			glColor3f(0.32,0.32,0.32);
+			glVertex2i(0,500);
+			glColor3f(0.13,0.13,0.55);
+			glVertex2i(1000,500);
+			glVertex2i(1000,75);
+		glEnd();
+		earlynight();
 	}
 	else
 	{
-	glBegin(GL_POLYGON);
-	glColor3f(0.13,0.13,0.55);
-	glVertex2i(0,75);
-	glVertex2i(0,500);
-	glVertex2i(1000,500);
-	glVertex2i(1000,75);
-	glEnd();
+		glBegin(GL_POLYGON);
+			glColor3f(0.13,0.13,0.55);
+			glVertex2i(0,75);
+			glVertex2i(0,500);
+			glVertex2i(1000,500);
+			glVertex2i(1000,75);
+		glEnd();
 	}
 	glFlush();
 }
@@ -402,59 +400,59 @@ void mrng_noon()
 	if(day<275)
 	{
 		glBegin(GL_POLYGON);
-	glColor3f(0.13,0.13,0.55);
-	glVertex2i(0,75);
-	glVertex2i(0,500);
-	glColor3f(1,0.5,0);
-	glVertex2i(1000,500);
-	glColor3f(0.13,0.13,0.55);
-	glVertex2i(1000,75);
-	glEnd();
+			glColor3f(0.13,0.13,0.55);
+			glVertex2i(0,75);
+			glVertex2i(0,500);
+			glColor3f(1,0.5,0);
+			glVertex2i(1000,500);
+			glColor3f(0.13,0.13,0.55);
+			glVertex2i(1000,75);
+		glEnd();
 	}
 	else if(day<300)
 	{
-	glBegin(GL_POLYGON);
-	glColor3f(0.13,0.13,0.55);
-	glVertex2i(0,75);
-	glColor3f(1,0.5,0);
-	glVertex2i(0,500);
-	glVertex2i(1000,500);
-	glVertex2i(1000,75);
-	glEnd();
+		glBegin(GL_POLYGON);
+			glColor3f(0.13,0.13,0.55);
+			glVertex2i(0,75);
+			glColor3f(1,0.5,0);
+			glVertex2i(0,500);
+			glVertex2i(1000,500);
+			glVertex2i(1000,75);
+		glEnd();
 	}
 	else if(day<325)
 	{
-	glBegin(GL_POLYGON);
-	glColor3f(.22,.67,.89);
-	glVertex2i(0,75);
-	glColor3f(1,0.25,0);
-	glVertex2i(0,500);
-	glVertex2i(1000,500);
-	glColor3f(.22,.67,.89);
-	glVertex2i(1000,75);
-	glEnd();
+		glBegin(GL_POLYGON);
+			glColor3f(.22,.67,.89);
+			glVertex2i(0,75);
+			glColor3f(1,0.25,0);
+			glVertex2i(0,500);
+			glVertex2i(1000,500);
+			glColor3f(.22,.67,.89);
+			glVertex2i(1000,75);
+		glEnd();
 	}
 	else if(day<350)
 	{
-	glBegin(GL_POLYGON);
-	glColor3f(.22,.67,.89);
-	glVertex2i(0,75);
-	glColor3f(1,0.25,0);
-	glVertex2i(0,500);
-	glColor3f(.22,.67,.89);
-	glVertex2i(1000,500);
-	glVertex2i(1000,75);
-	glEnd();
+		glBegin(GL_POLYGON);
+			glColor3f(.22,.67,.89);
+			glVertex2i(0,75);
+			glColor3f(1,0.25,0);
+			glVertex2i(0,500);
+			glColor3f(.22,.67,.89);
+			glVertex2i(1000,500);
+			glVertex2i(1000,75);
+		glEnd();
 	}
 	else
 	{
-	glBegin(GL_POLYGON);
-	glColor3f(0.22,0.67,0.89);
-	glVertex2i(0,75);
-	glVertex2i(0,500);
-	glVertex2i(1000,500);
-	glVertex2i(1000,75);
-	glEnd();
+		glBegin(GL_POLYGON);
+			glColor3f(0.22,0.67,0.89);
+			glVertex2i(0,75);
+			glVertex2i(0,500);
+			glVertex2i(1000,500);
+			glVertex2i(1000,75);
+		glEnd();
 	}
 	glFlush();
 }
@@ -927,13 +925,16 @@ void sleep1(int n)
 		for(j=0;j<300;j++)
 			for(k=0;k<200;k++);
 }
-void display();
+
 void keyboard(unsigned char key,int x,int y)
 {
+	//Engine start
 	if(key=='S'){
 		engine=1;
 		speed = 1;
 	}
+	//when Engine is switched off the
+	//car stops slowly 
 	else if(key=='s'){
 		for(int i =speed;i>0;i=i-0.5){
 			sleep1(100);
